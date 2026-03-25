@@ -1,0 +1,189 @@
+/* =========================================
+   Project Modal
+   ========================================= */
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-modal);
+  background: rgba(5, 10, 10, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-normal);
+}
+
+.modal-backdrop.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.modal {
+  background: #0c1414;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  width: 100%;
+  max-width: 760px;
+  max-height: calc(100svh - 2 * var(--space-4));
+  overflow-y: auto;
+  position: relative;
+  transform: translateY(40px) scale(0.96);
+  transition: transform var(--transition-normal);
+
+  /* Custom scrollbar inside modal */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 245, 255, 0.2) transparent;
+}
+
+.modal-backdrop.open .modal {
+  transform: translateY(0) scale(1);
+}
+
+.modal::-webkit-scrollbar {
+  width: 4px;
+}
+.modal::-webkit-scrollbar-track {
+  background: transparent;
+}
+.modal::-webkit-scrollbar-thumb {
+  background: rgba(0, 245, 255, 0.2);
+  border-radius: 2px;
+}
+
+/* Close button */
+.modal__close {
+  position: sticky;
+  top: var(--space-4);
+  float: right;
+  margin: var(--space-4) var(--space-4) calc(-1 * var(--space-12));
+  z-index: 10;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+  transition: color var(--transition-fast),
+              border-color var(--transition-fast),
+              background var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.modal__close:hover {
+  color: var(--color-text);
+  border-color: var(--color-accent-primary);
+  background: rgba(0, 245, 255, 0.06);
+}
+
+.modal__close svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Image gallery */
+.modal__gallery {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: rgba(0, 245, 255, 0.04);
+}
+
+.modal__gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Modal content */
+.modal__body {
+  padding: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.modal__category {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-accent-primary);
+}
+
+.modal__title {
+  font-family: var(--font-headline);
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  line-height: var(--leading-snug);
+  color: var(--color-text);
+}
+
+.modal__desc {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  line-height: var(--leading-loose);
+}
+
+/* Tags */
+.modal__tags-label {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-2);
+}
+
+.modal__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.modal__tag {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-accent-secondary);
+  background: rgba(171, 255, 2, 0.06);
+  border: 1px solid rgba(171, 255, 2, 0.2);
+  border-radius: var(--radius-full);
+  padding: var(--space-1) var(--space-3);
+}
+
+/* External link */
+.modal__link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent-primary);
+  border: 1px solid var(--color-accent-primary);
+  border-radius: var(--radius-full);
+  padding: var(--space-3) var(--space-6);
+  transition: background var(--transition-fast),
+              box-shadow var(--transition-fast),
+              transform var(--transition-fast);
+  align-self: flex-start;
+}
+
+.modal__link:hover {
+  background: rgba(0, 245, 255, 0.08);
+  box-shadow: var(--shadow-glow-primary);
+  transform: translateY(-2px);
+}
+
+.modal__link svg {
+  width: 14px;
+  height: 14px;
+}

@@ -1,0 +1,268 @@
+/* =========================================
+   Hero Section — full-screen video bg
+   Text left-aligned, video fills section
+   ========================================= */
+
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding-top: var(--header-h);
+  padding-inline: var(--container-pad);
+}
+
+/* ---- Video background ---- */
+.hero__video-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* Dark overlay — keeps text readable and blends into site palette */
+.hero__video-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    /* Heavy left vignette so text pops */
+    linear-gradient(to right,
+      rgba(0,0,0,0.82) 0%,
+      rgba(0,0,0,0.55) 40%,
+      rgba(0,0,0,0.20) 70%,
+      rgba(0,0,0,0.10) 100%),
+    /* Bottom fade to black — transitions smoothly into next section */
+    linear-gradient(to top,
+      #000000          0%,
+      rgba(0,0,0,0.65) 12%,
+      transparent      38%),
+    /* Top edge */
+    linear-gradient(to bottom,
+      rgba(0,0,0,0.50) 0%,
+      transparent      18%),
+    /* Overall dark tint so video doesn't overpower */
+    rgba(0,0,0,0.35);
+}
+
+/* ---- Text content (left) ---- */
+.hero__content {
+  position: relative;
+  z-index: var(--z-raised);
+  text-align: left;
+  max-width: min(560px, 90vw);
+  pointer-events: none;
+  will-change: opacity;
+}
+
+/* ---- h1 Name ---- */
+.hero__name {
+  font-family: var(--font-headline);
+  font-size: var(--text-hero);
+  font-weight: 800;
+  line-height: var(--leading-tight);
+  letter-spacing: -0.03em;
+  color: var(--color-text);
+  margin-bottom: var(--space-3);
+  opacity: 0;
+  transform: translateY(24px);
+  animation: heroFadeUp 0.65s var(--ease-out-expo) 0.15s forwards;
+}
+
+/* ---- h2 Title ---- */
+.hero__title {
+  font-family: var(--font-headline);
+  font-size: var(--text-2xl);
+  font-weight: 600;
+  color: var(--color-accent-primary);
+  letter-spacing: -0.01em;
+  margin-bottom: var(--space-4);
+  opacity: 0;
+  transform: translateY(22px);
+  animation: heroFadeUp 0.65s var(--ease-out-expo) 0.30s forwards;
+}
+
+/* ---- Subtitle "jandervs" ---- */
+.hero__subtitle {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  font-weight: 300;
+  letter-spacing: 0.28em;
+  text-transform: lowercase;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-10);
+  opacity: 0;
+  transform: translateY(18px);
+  animation: heroFadeUp 0.65s var(--ease-out-expo) 0.42s forwards;
+}
+
+/* ---- CTAs ---- */
+.hero__ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  justify-content: flex-start;
+  pointer-events: all;
+  opacity: 0;
+  transform: translateY(18px);
+  animation: heroFadeUp 0.65s var(--ease-out-expo) 0.58s forwards;
+}
+
+/* ---- Scroll indicator ---- */
+.hero__scroll-hint {
+  position: absolute;
+  bottom: var(--space-8);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: var(--z-raised);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  opacity: 0;
+  animation: heroFadeUp 0.65s var(--ease-out-expo) 1.1s forwards;
+}
+
+.hero__scroll-hint span {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.scroll-arrow {
+  width: 20px;
+  height: 20px;
+  border-right: 1.5px solid var(--color-accent-primary);
+  border-bottom: 1.5px solid var(--color-accent-primary);
+  transform: rotate(45deg);
+  animation: scrollBounce 2s var(--ease-in-out) infinite;
+}
+
+@keyframes scrollBounce {
+  0%, 100% { transform: rotate(45deg) translateY(0);   opacity: 1;   }
+  50%       { transform: rotate(45deg) translateY(6px); opacity: 0.5; }
+}
+
+/* ---- Entrance animation ---- */
+@keyframes heroFadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---- Noise overlay ---- */
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: var(--z-raised);
+  opacity: 0.3;
+}
+
+/* ---- Buttons ---- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-8);
+  border-radius: var(--radius-full);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: transform var(--transition-fast),
+              box-shadow var(--transition-fast),
+              background var(--transition-fast),
+              color var(--transition-fast),
+              border-color var(--transition-fast);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn:hover  { transform: translateY(-2px); }
+.btn:active { transform: translateY(0); }
+
+.btn--primary {
+  background: var(--color-cta);
+  color: #fff;
+  border: 1.5px solid var(--color-cta);
+}
+.btn--primary:hover {
+  background: transparent;
+  color: #fff;
+  border-color: rgba(124, 58, 237, 0.7);
+  box-shadow: var(--shadow-glow-cta);
+}
+
+.btn--outline {
+  background: transparent;
+  color: var(--color-accent-primary);
+  border: 1.5px solid var(--color-accent-primary);
+}
+.btn--outline:hover {
+  background: rgba(0, 200, 255, 0.08);
+  box-shadow: var(--shadow-glow-primary);
+}
+
+/* ---- Hero photo (right side) ---- */
+.hero__photo-wrap {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: var(--z-raised);
+  height: 92%;
+  display: flex;
+  align-items: flex-end;
+  pointer-events: none;
+  /* Fade in slightly after text */
+  opacity: 0;
+  animation: heroFadeUp 0.8s var(--ease-out-expo) 0.5s forwards;
+}
+
+.hero__photo {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+  object-position: bottom center;
+  /* Right vignette so photo blends into the dark overlay */
+  -webkit-mask-image:
+    linear-gradient(to left,  transparent 0%, black 12%),
+    linear-gradient(to top,   transparent 0%, black 6%);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    linear-gradient(to left,  transparent 0%, black 12%),
+    linear-gradient(to top,   transparent 0%, black 6%);
+  mask-composite: intersect;
+  /* Subtle cyan glow to match the design palette */
+  filter: drop-shadow(-8px 0 32px rgba(0, 245, 255, 0.12));
+}
+
+/* Mobile: slightly larger padding-top for the header */
+@media (max-width: 767px) {
+  .hero {
+    padding-inline: var(--container-pad);
+    align-items: flex-start;
+    padding-top: calc(var(--header-h) + var(--space-12));
+  }
+
+  .hero__content { max-width: 100%; }
+
+  /* Hide photo on small screens to keep text legible */
+  .hero__photo-wrap { display: none; }
+}
+
+/* Tablet: show photo but smaller */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .hero__photo-wrap { height: 75%; }
+}

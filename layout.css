@@ -1,0 +1,176 @@
+/* =========================================
+   Global Layout
+   ========================================= */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  /* Pure black base — colour accents scattered via ::before */
+  background: #000000;
+  background-attachment: fixed;
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Atmospheric glows — fixed, covers full site at all scroll positions */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background:
+    /* Left — deep violet core (palette anchor) */
+    radial-gradient(ellipse 55% 65% at 15% 45%,
+      rgba(76,  16, 122, 0.58) 0%,
+      rgba(49,  10,  82, 0.38) 35%,
+      transparent 62%),
+    /* Centre-right — indigo spread */
+    radial-gradient(ellipse 70% 70% at 65% 55%,
+      rgba(79,  70, 229, 0.28) 0%,
+      rgba(30,  58, 138, 0.16) 50%,
+      transparent 75%),
+    /* Top-right — violet accent */
+    radial-gradient(ellipse 40% 40% at 88% 15%,
+      rgba(124, 58, 237, 0.20) 0%,
+      transparent 65%),
+    /* Bottom-left — purple bloom */
+    radial-gradient(ellipse 45% 38% at 12% 88%,
+      rgba(168, 85, 247, 0.18) 0%,
+      transparent 65%),
+    /* Wide centre — blue/indigo haze */
+    radial-gradient(ellipse 100% 100% at 50% 50%,
+      rgba(79,  70, 229, 0.10) 0%,
+      rgba(0,  200, 255, 0.05) 55%,
+      transparent 85%);
+}
+
+/* ---- Isometric background canvas ---- */
+#iso-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* acima dos glows atmosféricos (-2), abaixo do conteúdo */
+  pointer-events: none;
+  display: block;
+}
+
+/* ---- Falling particles canvas ---- */
+#particles-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+  display: block;
+}
+
+/* Mobile: hide iso canvas, keep body::before gradients */
+@media (max-width: 767px) {
+  #iso-canvas { display: none; }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(79, 70, 229, 0.4);
+  border-radius: var(--radius-full);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent-violet);
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: var(--container-xl);
+  margin-inline: auto;
+  padding-inline: var(--container-pad);
+}
+
+/* Section base */
+.section {
+  padding-block: var(--space-20);
+  position: relative;
+}
+
+@media (min-width: 1024px) {
+  .section { padding-block: var(--space-24); }
+}
+
+/* Section label */
+.section__label {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-accent-primary);
+  opacity: 0.7;
+  margin-bottom: var(--space-4);
+}
+
+/* Section heading — typography-heavy */
+.section__heading {
+  font-family: var(--font-headline);
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  color: var(--color-text);
+  margin-bottom: var(--space-12);
+}
+
+/* Focus visible */
+:focus-visible {
+  outline: 2px solid var(--color-accent-primary);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+/* No-js fallback */
+.no-js .js-only { display: none; }
+
+/* Utility: visually hidden (accessible) */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Utility: body scroll lock */
+body.modal-open {
+  overflow: hidden;
+}
+
+/* Scroll progress indicator */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--color-accent-primary), var(--color-accent-secondary));
+  z-index: var(--z-toast);
+  transition: width 50ms linear;
+  pointer-events: none;
+}

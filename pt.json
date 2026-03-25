@@ -1,0 +1,135 @@
+{
+  "nav": {
+    "about": "Sobre",
+    "portfolio": "Portfólio",
+    "services": "Serviços",
+    "contact": "Contato"
+  },
+  "langToggle": {
+    "label": "Mudar idioma para Inglês"
+  },
+  "hero": {
+    "name": "Janderson Vinicius",
+    "title": "UI/UX Designer",
+    "subtitle": "jandervs",
+    "tagline": "Transformo problemas complexos em experiências digitais intuitivas.",
+    "cta_projects": "Ver Projetos",
+    "cta_contact": "Entrar em Contato"
+  },
+  "about": {
+    "section_label": "Sobre mim",
+    "heading": "Criando experiências que importam",
+    "bio_1": "Designer UI/UX com foco em criar experiências digitais que unem estética e funcionalidade.",
+    "bio_2": "Com domínio em Figma, prototipagem e design systems, transformo desafios complexos em interfaces intuitivas e memoráveis.",
+    "bio_3": "Apaixonado por motion design e novas tecnologias, sempre buscando a interseção entre arte e tecnologia.",
+    "skills_heading": "Ferramentas & Habilidades",
+    "skills": ["Figma", "Adobe XD", "Illustrator", "Photoshop", "After Effects", "Protopie", "Framer", "HTML/CSS", "Pesquisa UX", "Design System"]
+  },
+  "portfolio": {
+    "section_label": "Portfólio",
+    "heading": "Projetos Selecionados",
+    "filter_all": "Todos",
+    "filter_ux": "UX",
+    "filter_ui": "UI",
+    "filter_branding": "Branding",
+    "filter_motion": "Motion",
+    "modal_tags": "Tags",
+    "modal_visit": "Ver projeto online",
+    "projects": [
+      {
+        "id": "project-1",
+        "title": "Project 1",
+        "category_label": "UX",
+        "description": "Descrição breve do projeto 1.",
+        "full_description": "Descrição completa do projeto 1 com detalhes sobre o processo de design e os resultados obtidos.",
+        "tags": ["Figma", "UX Research", "Prototipagem"],
+        "link": "#"
+      },
+      {
+        "id": "project-2",
+        "title": "Project 2",
+        "category_label": "UI",
+        "description": "Descrição breve do projeto 2.",
+        "full_description": "Descrição completa do projeto 2 com detalhes sobre o processo de design e os resultados obtidos.",
+        "tags": ["Figma", "UI Design", "Design System"],
+        "link": "#"
+      },
+      {
+        "id": "project-3",
+        "title": "Project 3",
+        "category_label": "Branding",
+        "description": "Descrição breve do projeto 3.",
+        "full_description": "Descrição completa do projeto 3 com detalhes sobre o processo de design e os resultados obtidos.",
+        "tags": ["Illustrator", "Branding", "Identidade Visual"],
+        "link": "#"
+      },
+      {
+        "id": "project-4",
+        "title": "Project 4",
+        "category_label": "Motion",
+        "description": "Descrição breve do projeto 4.",
+        "full_description": "Descrição completa do projeto 4 com detalhes sobre o processo de design e os resultados obtidos.",
+        "tags": ["After Effects", "Motion", "Animação"],
+        "link": "#"
+      },
+      {
+        "id": "project-5",
+        "title": "Project 5",
+        "category_label": "UX",
+        "description": "Descrição breve do projeto 5.",
+        "full_description": "Descrição completa do projeto 5 com detalhes sobre o processo de design e os resultados obtidos.",
+        "tags": ["Figma", "UX", "Wireframe"],
+        "link": "#"
+      }
+    ]
+  },
+  "services": {
+    "section_label": "Serviços",
+    "heading": "O que eu faço",
+    "cta": "Vamos conversar?",
+    "items": [
+      {
+        "title": "UX Research & Design",
+        "description": "Pesquisa com usuários, mapeamento de jornada, wireframes e prototipagem."
+      },
+      {
+        "title": "UI Design",
+        "description": "Interfaces visuais de alta fidelidade e design systems escaláveis."
+      },
+      {
+        "title": "Branding Digital",
+        "description": "Identidade visual e sistemas de marca com posicionamento único."
+      },
+      {
+        "title": "Motion & Interação",
+        "description": "Animações de interface e micro-interações que elevam a experiência."
+      }
+    ]
+  },
+  "contact": {
+    "section_label": "Disponível para projetos",
+    "heading": "Vamos criar algo extraordinário.",
+    "cta": "Contratar profissional",
+    "success": "Mensagem enviada com sucesso!",
+    "error": "Erro ao enviar. Tente novamente.",
+    "form": {
+      "submit": "Enviar mensagem",
+      "submitting": "Enviando...",
+      "char_count": "caracteres restantes"
+    },
+    "errors": {
+      "name_required": "Nome é obrigatório.",
+      "name_min": "Nome muito curto.",
+      "email_required": "E-mail é obrigatório.",
+      "email_invalid": "E-mail inválido.",
+      "message_required": "Mensagem é obrigatória.",
+      "message_min": "Mensagem muito curta.",
+      "message_max": "Mensagem muito longa."
+    }
+  },
+  "footer": {
+    "made_with": "Feito com",
+    "and": "e muito café",
+    "rights": "Todos os direitos reservados"
+  }
+}

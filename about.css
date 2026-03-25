@@ -1,0 +1,85 @@
+/* =========================================
+   About Section — text + background only
+   ========================================= */
+
+.about {
+  background: transparent;
+  overflow: hidden;
+}
+
+
+.about__grid {
+  display: grid;
+  gap: var(--space-16);
+  max-width: 780px;
+  margin-inline: auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* ---- Content ---- */
+.about__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.about__bio {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.about__bio p {
+  color: var(--color-text-muted);
+  font-size: var(--text-base);
+  line-height: var(--leading-loose);
+}
+
+.about__bio p:first-child {
+  color: var(--color-text);
+  font-size: var(--text-lg);
+  font-weight: 500;
+}
+
+/* Skills */
+.about__skills-heading {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-4);
+  opacity: 0.6;
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.skill-tag {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: var(--radius-full);
+  padding: var(--space-1) var(--space-3);
+  transition: color var(--transition-fast),
+              border-color var(--transition-fast);
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.skill-tag:hover {
+  color: var(--color-accent-secondary);
+  border-color: rgba(168, 85, 247, 0.4);
+}
+
+/* GSAP animation targets */
+.about__content > * {
+  opacity: 0;
+  transform: translateY(30px);
+}

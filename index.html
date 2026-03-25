@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="pt" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfólio de Janderson Vinicius — Designer UX/UI especializado em criar experiências digitais intuitivas e memoráveis.">
+  <meta name="theme-color" content="#050a0a">
+
+  <!-- Open Graph -->
+  <meta property="og:title"       content="Janderson VS — Designer UX/UI">
+  <meta property="og:description" content="Transformo problemas complexos em experiências digitais intuitivas.">
+  <meta property="og:type"        content="website">
+
+  <title>Janderson VS — Designer UX/UI</title>
+
+  <!-- Preconnect fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components/header.css">
+  <link rel="stylesheet" href="css/components/hero.css">
+  <link rel="stylesheet" href="css/components/about.css">
+  <link rel="stylesheet" href="css/components/portfolio.css">
+  <link rel="stylesheet" href="css/components/services.css">
+  <link rel="stylesheet" href="css/components/contact.css">
+  <link rel="stylesheet" href="css/components/modal.css">
+  <link rel="stylesheet" href="css/cursor.css">
+
+  <script>document.documentElement.classList.remove('no-js');</script>
+</head>
+<body>
+
+  <!-- ===================== ISO BACKGROUND ===================== -->
+  <canvas id="iso-canvas" aria-hidden="true"></canvas>
+
+  <!-- ===================== PARTICLES ===================== -->
+  <canvas id="particles-canvas" aria-hidden="true"></canvas>
+
+  <!-- Scroll progress bar -->
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="header" role="banner">
+    <div class="header__inner">
+      <a href="#hero" class="header__logo" aria-label="Ir para o início">
+        jandervs<span>.</span>
+      </a>
+
+      <nav class="nav" role="navigation" aria-label="Navegação principal">
+        <a href="#about"     class="nav__link" data-i18n="nav.about">Sobre</a>
+        <a href="#portfolio" class="nav__link" data-i18n="nav.portfolio">Portfólio</a>
+        <a href="#services"  class="nav__link" data-i18n="nav.services">Serviços</a>
+        <a href="#contact"   class="nav__link" data-i18n="nav.contact">Contato</a>
+      </nav>
+
+      <div class="header__actions">
+        <button class="lang-toggle"
+                aria-label="Mudar idioma para Inglês"
+                data-i18n-aria="langToggle.label">
+          <span class="lang-toggle__item active" data-lang="pt">PT</span>
+          <span class="lang-toggle__sep" aria-hidden="true">|</span>
+          <span class="lang-toggle__item" data-lang="en">EN</span>
+        </button>
+
+        <button class="hamburger"
+                aria-label="Abrir menu"
+                aria-expanded="false"
+                aria-controls="mobile-menu">
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile menu -->
+  <nav class="mobile-menu" id="mobile-menu" aria-label="Menu mobile" aria-hidden="true">
+    <a href="#about"     class="mobile-menu__link" data-i18n="nav.about">Sobre</a>
+    <a href="#portfolio" class="mobile-menu__link" data-i18n="nav.portfolio">Portfólio</a>
+    <a href="#services"  class="mobile-menu__link" data-i18n="nav.services">Serviços</a>
+    <a href="#contact"   class="mobile-menu__link" data-i18n="nav.contact">Contato</a>
+  </nav>
+
+  <main id="main-content">
+
+    <!-- ===================== HERO ===================== -->
+    <section id="hero" class="hero" aria-label="Apresentação">
+
+      <!-- Full-section video background -->
+      <div class="hero__video-wrap" aria-hidden="true">
+        <video
+          class="hero__video"
+          src="assets/hero-bg.mp4"
+          autoplay
+          loop
+          muted
+          playsinline
+          preload="auto"
+        ></video>
+        <div class="hero__video-overlay"></div>
+      </div>
+
+      <!-- Left: Text content -->
+      <div class="hero__content">
+        <h1 class="hero__name" data-i18n="hero.name">Janderson Vinicius</h1>
+        <h2 class="hero__title" data-i18n="hero.title">UI/UX Designer</h2>
+        <p class="hero__subtitle" data-i18n="hero.subtitle">jandervs</p>
+        <div class="hero__ctas">
+          <a href="#portfolio" class="btn btn--primary" data-i18n="hero.cta_projects">
+            Ver Projetos
+          </a>
+          <a href="#contact" class="btn btn--outline" data-i18n="hero.cta_contact">
+            Entrar em Contato
+          </a>
+        </div>
+      </div>
+
+      <!-- Scroll hint -->
+      <div class="hero__scroll-hint" aria-hidden="true">
+        <span>scroll</span>
+        <div class="scroll-arrow"></div>
+      </div>
+    </section>
+
+    <!-- ===================== ABOUT ===================== -->
+    <section id="about" class="about section">
+      <div class="container">
+        <div class="about__grid">
+
+          <!-- Content -->
+          <div class="about__content">
+            <div>
+              <p class="section__label" data-i18n="about.section_label">Sobre mim</p>
+              <h2 class="section__heading" data-i18n="about.heading">Criando experiências que importam</h2>
+            </div>
+
+            <div class="about__bio">
+              <p data-i18n="about.bio_1"></p>
+              <p data-i18n="about.bio_2"></p>
+              <p data-i18n="about.bio_3"></p>
+            </div>
+
+            <div class="about__skills">
+              <p class="about__skills-heading" data-i18n="about.skills_heading">Ferramentas &amp; Habilidades</p>
+              <div class="skills-grid" id="skills-grid">
+                <!-- Populated by JS via i18n -->
+                <span class="skill-tag">Figma</span>
+                <span class="skill-tag">Adobe XD</span>
+                <span class="skill-tag">Illustrator</span>
+                <span class="skill-tag">Photoshop</span>
+                <span class="skill-tag">After Effects</span>
+                <span class="skill-tag">Protopie</span>
+                <span class="skill-tag">Framer</span>
+                <span class="skill-tag">HTML/CSS</span>
+                <span class="skill-tag">Pesquisa UX</span>
+                <span class="skill-tag">Design System</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PORTFOLIO ===================== -->
+    <section id="portfolio" class="portfolio section">
+      <div class="container">
+        <p class="section__label" data-i18n="portfolio.section_label">Portfólio</p>
+        <h2 class="section__heading" data-i18n="portfolio.heading">Projetos Selecionados</h2>
+
+        <!-- Filters -->
+        <div class="portfolio__filters" role="group" aria-label="Filtrar projetos">
+          <button class="filter-btn active" data-filter="all" data-i18n="portfolio.filter_all">Todos</button>
+          <button class="filter-btn" data-filter="ux"       data-i18n="portfolio.filter_ux">UX</button>
+          <button class="filter-btn" data-filter="ui"       data-i18n="portfolio.filter_ui">UI</button>
+          <button class="filter-btn" data-filter="branding" data-i18n="portfolio.filter_branding">Branding</button>
+          <button class="filter-btn" data-filter="motion"   data-i18n="portfolio.filter_motion">Motion</button>
+        </div>
+
+        <!-- Carousel -->
+        <div class="carousel" role="region" aria-label="Projetos">
+          <div class="carousel__track" id="projects-carousel">
+
+            <article class="project-card"
+                     data-project-id="project-1"
+                     data-category="ux"
+                     tabindex="0" role="button"
+                     aria-label="App de Finanças Pessoais">
+              <div class="project-card__img-wrap">
+                <img
+                  src="https://placehold.co/600x375/050a0a/00f5ff?text=Project+1"
+                  alt="App de Finanças Pessoais — preview"
+                  class="project-card__img"
+                  loading="lazy"
+                  width="600" height="375"
+                >
+                <div class="project-card__overlay" aria-hidden="true">
+                  <span class="project-card__overlay-text">Ver Projeto</span>
+                </div>
+              </div>
+              <div class="project-card__body">
+                <span class="project-card__category">UX Design</span>
+                <h3 class="project-card__title">App de Finanças Pessoais</h3>
+                <p class="project-card__desc">Redesign completo de um app fintech focado em reduzir a ansiedade financeira dos usuários.</p>
+              </div>
+            </article>
+
+            <article class="project-card"
+                     data-project-id="project-2"
+                     data-category="ui"
+                     tabindex="0" role="button"
+                     aria-label="Design System — E-commerce">
+              <div class="project-card__img-wrap">
+                <img
+                  src="https://placehold.co/600x375/050a0a/abff02?text=Project+2"
+                  alt="Design System E-commerce — preview"
+                  class="project-card__img"
+                  loading="lazy"
+                  width="600" height="375"
+                >
+                <div class="project-card__overlay" aria-hidden="true">
+                  <span class="project-card__overlay-text">Ver Projeto</span>
+                </div>
+              </div>
+              <div class="project-card__body">
+                <span class="project-card__category">UI Design</span>
+                <h3 class="project-card__title">Design System — E-commerce</h3>
+                <p class="project-card__desc">Criação de design system escalável para plataforma de e-commerce com +200 componentes.</p>
+              </div>
+            </article>
+
+            <article class="project-card"
+                     data-project-id="project-3"
+                     data-category="branding"
+                     tabindex="0" role="button"
+                     aria-label="Identidade Visual — Studio Créatif">
+              <div class="project-card__img-wrap">
+                <img
+                  src="https://placehold.co/600x375/050a0a/fb6b3c?text=Project+3"
+                  alt="Identidade Visual Studio Créatif — preview"
+                  class="project-card__img"
+                  loading="lazy"
+                  width="600" height="375"
+                >
+                <div class="project-card__overlay" aria-hidden="true">
+                  <span class="project-card__overlay-text">Ver Projeto</span>
+                </div>
+              </div>
+              <div class="project-card__body">
+                <span class="project-card__category">Branding</span>
+                <h3 class="project-card__title">Identidade Visual — Studio Créatif</h3>
+                <p class="project-card__desc">Identidade visual completa para estúdio criativo boutique em São Paulo.</p>
+              </div>
+            </article>
+
+            <article class="project-card"
+                     data-project-id="project-4"
+                     data-category="motion"
+                     tabindex="0" role="button"
+                     aria-label="Motion Design — Reels">
+              <div class="project-card__img-wrap">
+                <img
+                  src="https://placehold.co/600x375/050a0a/7c3aed?text=Project+4"
+                  alt="Motion Design Reels — preview"
+                  class="project-card__img"
+                  loading="lazy"
+                  width="600" height="375"
+                >
+                <div class="project-card__overlay" aria-hidden="true">
+                  <span class="project-card__overlay-text">Ver Projeto</span>
+                </div>
+              </div>
+              <div class="project-card__body">
+                <span class="project-card__category">Motion</span>
+                <h3 class="project-card__title">Motion Design — Reels</h3>
+                <p class="project-card__desc">Pacote de animações e transições para campanhas digitais de alta performance.</p>
+              </div>
+            </article>
+
+            <article class="project-card"
+                     data-project-id="project-5"
+                     data-category="ux"
+                     tabindex="0" role="button"
+                     aria-label="Plataforma SaaS — Dashboard">
+              <div class="project-card__img-wrap">
+                <img
+                  src="https://placehold.co/600x375/050a0a/00f5ff?text=Project+5"
+                  alt="Plataforma SaaS Dashboard — preview"
+                  class="project-card__img"
+                  loading="lazy"
+                  width="600" height="375"
+                >
+                <div class="project-card__overlay" aria-hidden="true">
+                  <span class="project-card__overlay-text">Ver Projeto</span>
+                </div>
+              </div>
+              <div class="project-card__body">
+                <span class="project-card__category">UX Design</span>
+                <h3 class="project-card__title">Plataforma SaaS — Dashboard</h3>
+                <p class="project-card__desc">Dashboard analítico para plataforma B2B com foco em clareza de dados complexos.</p>
+              </div>
+            </article>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SERVICES ===================== -->
+    <section id="services" class="services section">
+      <div class="container">
+        <p class="section__label" data-i18n="services.section_label">Serviços</p>
+        <h2 class="section__heading" data-i18n="services.heading">O que eu faço</h2>
+
+        <div class="services-grid">
+
+          <div class="service-card" data-index="0">
+            <svg class="service-card__border" aria-hidden="true">
+              <rect width="100%" height="100%" rx="16" ry="16"/>
+            </svg>
+            <div class="service-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="24" cy="24" r="18"/>
+                <circle cx="24" cy="24" r="8"/>
+                <line x1="24" y1="6" x2="24" y2="16"/>
+                <line x1="24" y1="32" x2="24" y2="42"/>
+                <line x1="6" y1="24" x2="16" y2="24"/>
+                <line x1="32" y1="24" x2="42" y2="24"/>
+              </svg>
+            </div>
+            <h3 class="service-card__title" data-i18n="services.items.0.title">UX Research &amp; Design</h3>
+            <p class="service-card__desc" data-i18n="services.items.0.description">Pesquisa com usuários, mapeamento de jornada, wireframes e prototipagem.</p>
+          </div>
+
+          <div class="service-card" data-index="1">
+            <svg class="service-card__border" aria-hidden="true">
+              <rect width="100%" height="100%" rx="16" ry="16"/>
+            </svg>
+            <div class="service-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="4" y="8" width="40" height="32" rx="4"/>
+                <line x1="4" y1="16" x2="44" y2="16"/>
+                <rect x="10" y="22" width="12" height="10" rx="2"/>
+                <line x1="26" y1="24" x2="38" y2="24"/>
+                <line x1="26" y1="28" x2="34" y2="28"/>
+                <line x1="26" y1="32" x2="38" y2="32"/>
+              </svg>
+            </div>
+            <h3 class="service-card__title" data-i18n="services.items.1.title">UI Design</h3>
+            <p class="service-card__desc" data-i18n="services.items.1.description">Interfaces visuais de alta fidelidade e design systems escaláveis.</p>
+          </div>
+
+          <div class="service-card" data-index="2">
+            <svg class="service-card__border" aria-hidden="true">
+              <rect width="100%" height="100%" rx="16" ry="16"/>
+            </svg>
+            <div class="service-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M24 6 L42 38 H6 Z"/>
+                <circle cx="24" cy="30" r="5"/>
+                <line x1="24" y1="16" x2="24" y2="25"/>
+              </svg>
+            </div>
+            <h3 class="service-card__title" data-i18n="services.items.2.title">Branding Digital</h3>
+            <p class="service-card__desc" data-i18n="services.items.2.description">Identidade visual e sistemas de marca com posicionamento único.</p>
+          </div>
+
+          <div class="service-card" data-index="3">
+            <svg class="service-card__border" aria-hidden="true">
+              <rect width="100%" height="100%" rx="16" ry="16"/>
+            </svg>
+            <div class="service-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="24" cy="24" r="18"/>
+                <polygon points="20,17 33,24 20,31" fill="currentColor" stroke="none"/>
+              </svg>
+            </div>
+            <h3 class="service-card__title" data-i18n="services.items.3.title">Motion &amp; Interação</h3>
+            <p class="service-card__desc" data-i18n="services.items.3.description">Animações de interface e micro-interações que elevam a experiência.</p>
+          </div>
+
+        </div>
+
+        <!-- CTA -->
+        <div class="services__cta-wrap">
+          <a href="#contact" class="btn btn--outline" data-i18n="services.cta">Vamos conversar?</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONTACT ===================== -->
+    <section id="contact" class="contact section">
+      <div class="container">
+        <div class="contact__inner">
+          <p class="contact__eyebrow" data-i18n="contact.section_label">Disponível para projetos</p>
+          <h2 class="contact__headline" data-i18n="contact.heading">Vamos criar algo<br>extraordinário.</h2>
+          <a href="/cdn-cgi/l/email-protection#8be1eae5efeef9fdf8cbeee6eae2e7a5e8e4e6" class="contact__cta-btn" data-i18n="contact.cta">
+            Contratar profissional
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__inner">
+        <p class="footer__text">
+          <span data-i18n="footer.made_with">Feito com</span>
+          <span class="footer__heart" aria-hidden="true"> ♥ </span>
+          <span data-i18n="footer.and">e muito café</span>
+          &mdash; Janderson VS &copy; <span id="footer-year"></span>
+        </p>
+        <p class="footer__text" data-i18n="footer.rights">Todos os direitos reservados</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================== MODAL ===================== -->
+  <div class="modal-backdrop"
+       id="project-modal"
+       role="dialog"
+       aria-modal="true"
+       aria-label="Detalhes do projeto">
+    <div class="modal">
+      <button class="modal__close" aria-label="Fechar projeto">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+          <line x1="2" y1="2" x2="14" y2="14"/>
+          <line x1="14" y1="2" x2="2" y2="14"/>
+        </svg>
+      </button>
+
+      <div class="modal__gallery">
+        <img src="" alt="" loading="lazy" width="760" height="427">
+      </div>
+
+      <div class="modal__body">
+        <span class="modal__category"></span>
+        <h2 class="modal__title"></h2>
+        <p class="modal__desc"></p>
+
+        <div>
+          <p class="modal__tags-label" data-i18n="portfolio.modal_tags">Tags</p>
+          <div class="modal__tags"></div>
+        </div>
+
+        <a href="#" class="modal__link" target="_blank" rel="noopener noreferrer">
+          <span data-i18n="portfolio.modal_visit">Ver projeto online</span>
+          <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 12 L12 2"/>
+            <path d="M5 2 H12 V9"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== SCRIPTS ===================== -->
+
+  <!-- Three.js — defer garante ordem com os demais scripts -->
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r158/three.min.js" defer></script>
+
+  <!-- GSAP + ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+
+  <!-- Anime.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js" defer></script>
+
+  <!-- App (carregam em ordem após Three.js) -->
+  <script src="js/i18n.js"        defer></script>
+  <script src="js/particles.js"   defer></script>
+  <script src="js/iso-scene.js"   defer></script>
+  <script src="js/animations.js"  defer></script>
+  <script src="js/form.js"        defer></script>
+  <script src="js/main.js"        defer></script>
+  <!-- Custom cursor -->
+  <script src="js/cursor.js" defer></scrip

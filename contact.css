@@ -1,0 +1,125 @@
+/* =========================================
+   Contact Section — CTA only
+   ========================================= */
+
+.contact {
+  background: transparent;
+  position: relative;
+  text-align: center;
+}
+
+/* Atmospheric glow centred behind the CTA */
+.contact::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 700px;
+  height: 400px;
+  background:
+    radial-gradient(ellipse 60% 70% at 50% 50%,
+      rgba(124, 58, 237, 0.18) 0%,
+      rgba(79,  70, 229, 0.10) 45%,
+      transparent 75%),
+    radial-gradient(ellipse 40% 50% at 50% 50%,
+      rgba(0, 200, 255, 0.07) 0%,
+      transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.contact__inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-6);
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.contact__eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-accent-primary);
+  opacity: 0.7;
+}
+
+.contact__headline {
+  font-family: var(--font-headline);
+  font-size: clamp(2.4rem, 6vw, 4.5rem);
+  font-weight: 800;
+  line-height: var(--leading-tight);
+  letter-spacing: -0.03em;
+  color: var(--color-text);
+}
+
+/* Large pill CTA button */
+.contact__cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4) var(--space-12);
+  border-radius: var(--radius-full);
+  background: var(--color-cta);
+  color: #fff;
+  font-family: var(--font-mono);
+  font-size: var(--text-base);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 1.5px solid var(--color-cta);
+  transition:
+    background var(--transition-fast),
+    box-shadow  var(--transition-fast),
+    transform   var(--transition-fast),
+    border-color var(--transition-fast);
+  margin-top: var(--space-10);
+}
+
+.contact__cta-btn:hover {
+  background: transparent;
+  border-color: rgba(124, 58, 237, 0.7);
+  box-shadow: var(--shadow-glow-cta), 0 0 60px rgba(124, 58, 237, 0.20);
+  transform: translateY(-3px);
+}
+
+.contact__cta-btn:active {
+  transform: translateY(0);
+}
+
+/* Footer */
+.footer {
+  border-top: 1px solid var(--color-border);
+  padding-block: var(--space-8);
+  text-align: center;
+}
+
+.footer__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.footer__text {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  letter-spacing: 0.05em;
+}
+
+.footer__heart {
+  color: var(--color-cta);
+  display: inline;
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.2); }
+}
